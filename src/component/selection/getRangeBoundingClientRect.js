@@ -32,11 +32,22 @@ function getRangeBoundingClientRect(range: Range): FakeClientRect {
   // the first rectangle in list and all of the remaining rectangles of which
   // the height or width is not zero."
   // http://www.w3.org/TR/cssom-view/#dom-range-getboundingclientrect
-  var rects = getRangeClientRects(range);
   var top = 0;
   var right = 0;
   var bottom = 0;
   var left = 0;
+
+  var rects = getRangeClientRects(range);
+  if (range.endContainer.nodeName === 'FIGURE' && range.collapsed) {
+    return (typeof (range.endContainer.getBoundingClientRect) === 'function') ? range.endContainer.getBoundingClientRect() : {    
+      top,
+      right,
+      bottom,
+      left,
+      width: right - left,
+      height: bottom - top,
+    };
+  }
 
   if (rects.length) {
     ({top, right, bottom, left} = rects[0]);
