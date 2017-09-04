@@ -1,7 +1,7 @@
 {
   "name": "@beezyinc/draft-js-bz",
   "description": "A React framework for building text editors.",
-  "version": "0.9.1rc1",
+  "version": "0.9.3",
   "keywords": [
     "draftjs",
     "editor",
@@ -31,7 +31,7 @@
   },
   "dependencies": {
     "fbjs": "^0.8.7",
-    "immutable": "~3.7.6",
+    "immutable": "~3.8.1",
     "object-assign": "^4.1.1"
   },
   "peerDependencies": {
