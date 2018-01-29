@@ -60,6 +60,8 @@ function insertFragmentIntoContentState(
         targetOffset
       ),
       data: pastedBlock.getData(),
+      // DAGU: modified in order to allow block type merge
+      type: pastedBlock.getType() || 'unstyled',
     });
 
     blockMap = blockMap.set(targetKey, newBlock);
