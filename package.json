@@ -50,7 +50,7 @@
     "eslint-plugin-babel": "^3.3.0",
     "eslint-plugin-flowtype": "^2.30.3",
     "eslint-plugin-react": "^5.2.2",
-    "fbjs-scripts": "^0.7.1",
+    "fbjs-scripts": "^0.8.1",
     "flow-bin": "^0.38.0",
     "gulp": "^3.9.1",
     "gulp-babel": "^6.1.2",
