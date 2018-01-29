@@ -13,7 +13,7 @@
 'use strict';
 
 var EditorState = require('EditorState');
-var UserAgent = require('../node_modules/fbjs/lib/UserAgent');
+var UserAgent = require('UserAgent');
 
 function editOnFocus(e: SyntheticFocusEvent): void {
   var editorState = this.props.editorState;
