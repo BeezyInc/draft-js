@@ -17,6 +17,7 @@ var DraftModifier = require('DraftModifier');
 var DraftOffsetKey = require('DraftOffsetKey');
 var EditorState = require('EditorState');
 var UserAgent = require('UserAgent');
+const isEventHandled = require('isEventHandled');
 
 var findAncestorOffsetKey = require('findAncestorOffsetKey');
 var nullthrows = require('nullthrows');
@@ -40,6 +41,13 @@ var DOUBLE_NEWLINE = '\n\n';
  * due to a spellcheck change, and we can incorporate it into our model.
  */
 function editOnInput(editor: DraftEditor): void {
+  if (
+    editor.props.handleOnInput &&
+    isEventHandled(editor.props.handleOnInput())
+  ) {
+    return;
+  }
+
   if (editor._pendingStateFromBeforeInput !== undefined) {
     editor.update(editor._pendingStateFromBeforeInput);
     editor._pendingStateFromBeforeInput = undefined;
