@@ -17,6 +17,7 @@ var DraftOffsetKey = require('DraftOffsetKey');
 var EditorState = require('EditorState');
 var Entity = require('DraftEntity');
 var UserAgent = require('UserAgent');
+var isEventHandled = require('isEventHandled');
 
 var findAncestorOffsetKey = require('findAncestorOffsetKey');
 var nullthrows = require('nullthrows');
@@ -38,6 +39,10 @@ var DOUBLE_NEWLINE = '\n\n';
  * due to a spellcheck change, and we can incorporate it into our model.
  */
 function editOnInput(): void {
+  if (this.props.handleOnInput && isEventHandled(this.props.handleOnInput())) {
+    return;
+  }
+
   var domSelection = global.getSelection();
 
   var {anchorNode, isCollapsed} = domSelection;
