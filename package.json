@@ -1,7 +1,7 @@
 {
   "name": "@beezyinc/draft-js-bz",
   "description": "A React framework for building text editors.",
-  "version": "0.9.6",
+  "version": "0.13.0",
   "keywords": [
     "draftjs",
     "editor",
