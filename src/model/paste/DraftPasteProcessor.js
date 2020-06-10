@@ -46,13 +46,14 @@ const DraftPasteProcessor = {
   processText(
     textBlocks: Array<string>,
     character: CharacterMetadata,
+    type: string
   ): Array<ContentBlock> {
     return textBlocks.map(
       textLine => {
         textLine = sanitizeDraftText(textLine);
         return new ContentBlock({
           key: generateRandomKey(),
-          type: 'unstyled',
+          type: type || 'unstyled',
           text: textLine,
           characterList: List(Repeat(character, textLine.length)),
         });
