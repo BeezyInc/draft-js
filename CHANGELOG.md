@@ -4,6 +4,12 @@ Notable changes to Draft.js will be documented in this file.
 
 Changes to `src` are live in production on facebook.com at the time of release.
 
+## 0.14.0
+
+### Changed
+
+* Add handle for editOnInput (from diff current version to 0.9.8 lib)
+
 ## 0.13.0
 
 ### Changed
