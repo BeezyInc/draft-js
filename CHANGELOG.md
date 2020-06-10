@@ -4,6 +4,12 @@ Notable changes to Draft.js will be documented in this file.
 
 Changes to `src` are live in production on facebook.com at the time of release.
 
+## 0.12.0
+
+### Changed
+
+* Update DraftPasteProcessor model to accept a block type argument
+
 ## 0.10.1
 
 ### Added
